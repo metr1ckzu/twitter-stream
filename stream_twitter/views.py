@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from stream_twitter.models import Follow
 from stream_twitter.models import Tweet
-from django.contrib.auth.models import user
+from django.contrib.auth.models import User
 from stream_django.enrich import Enrich
 from stream_django.feed_manager import feed_manager
 

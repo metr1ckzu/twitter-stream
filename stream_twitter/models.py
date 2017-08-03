@@ -8,6 +8,7 @@ class Tweet(activity.Activity, models.Model):
     user = models.ForeignKey('auth.User')
     text = models.CharField(max_length=160)
     created_at = models.DateTimeField(auto_now_add=True)
+
     @property
     def activity_object_attr(self):
         return self
@@ -30,5 +31,5 @@ def follow_feed(sender, instance, created, **kwargs):
         feed_manager.follow_user(instance.user_id, instance.target_id)
 
 
-post_save.connect(follow_feed, sender=Follow)
-post_delete.connect(unfollow_feed, sender=Follow)
+#post_save.connect(follow_feed, sender=Follow)
+#post_delete.connect(unfollow_feed, sender=Follow)
